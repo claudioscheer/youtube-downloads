@@ -1,6 +1,7 @@
-build/
-youtube-mp3/
-youtube-video/
-setup-*
-*.swp
-*.un~
+bin
+etc
+include
+lib
+share
+*.mp3
+*.mp4
