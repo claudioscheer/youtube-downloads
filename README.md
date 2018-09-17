@@ -1,8 +1,8 @@
 # Dependencies
 - Python 3
-- `pip3 install --upgrade youtube-dl`
+- `pip3 install -r requirements.txt`
 - [http://builds.libav.org/windows/release-gpl/](http://builds.libav.org/windows/release-gpl/) - to use mp3
 
 # How to run?
-- `python3 youtube-mp3.py` or `python3 youtube-video.py`
+- `python3 mp3.py` or `python3 video.py`
 - type url youtube video
