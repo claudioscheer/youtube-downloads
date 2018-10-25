@@ -1,4 +1,3 @@
-#!./bin/python3
 import sys
 import youtube_dl
 
@@ -18,8 +17,10 @@ def my_hook(d):
     if d["status"] == "finished":
         print("\nConverting file...")
     elif d["status"] == "downloading":
-        sys.stdout.write("\r%s of %s..." % (d["_percent_str"], d["_total_bytes_str"]))
+        status = (d["downloaded_bytes"] / d["total_bytes"]) * 100
+        sys.stdout.write(f"\r{status}%")
         sys.stdout.flush()
+
 
 ydl_opts = {
     "format": "bestaudio/best",
@@ -30,9 +31,15 @@ ydl_opts = {
     }],
     "logger": MyLogger(),
     "progress_hooks": [my_hook],
-    "noplaylist" : True,
+    "noplaylist": True,
 }
 
 print("Type YouTube url:")
-with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-    ydl.download([input()])
+inputs = []
+url = input()
+if url:
+    while (url):
+        inputs.append(url)
+        url = input()
+    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+        ydl.download(inputs)

@@ -6,3 +6,7 @@ share
 *.mp3
 *.mp4
 *.webm
+build
+dist
+*.spec
+__pycache__
