@@ -1,2 +1,2 @@
-pyinstaller --onefile mp3.py -n youtube-mp3
-pyinstaller --onefile video.py -n youtube-video
+./bin/pyinstaller --onefile mp3.py -n youtube-mp3
+./bin/pyinstaller --onefile video.py -n youtube-video

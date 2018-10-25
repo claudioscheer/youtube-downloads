@@ -1,4 +1,3 @@
-import sys
 import youtube_dl
 
 
@@ -15,11 +14,10 @@ class MyLogger():
 
 def my_hook(d):
     if d["status"] == "finished":
-        print("\nConverting file...")
+        print("Converting file...")
     elif d["status"] == "downloading":
         status = (d["downloaded_bytes"] / d["total_bytes"]) * 100
-        sys.stdout.write(f"\r{status}%")
-        sys.stdout.flush()
+        print(f"{round(status, 2)}%")
 
 
 ydl_opts = {
