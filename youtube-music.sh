@@ -1,2 +1,2 @@
 URL=$1
-youtube-dl --extract-audio --audio-format mp3 $URL
+yt-dlp --extract-audio --audio-format mp3 $URL
